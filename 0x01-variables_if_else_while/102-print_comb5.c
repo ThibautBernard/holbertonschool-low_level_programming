@@ -15,13 +15,10 @@ int main(void)
 	{
 		for (numberTwo = 0; numberTwo <= 9; numberTwo++)
 		{
-			
 			for (numberThree = 0; numberThree <= 9; numberThree++)
 			{
-
 				for (numberFour = 0; numberFour <= 9; numberFour++)
 				{
-					
 					if ((number + numberTwo) == (numberThree + numberFour))
 					{
 					}
@@ -44,11 +41,8 @@ int main(void)
 							putchar(' ');
 						}
 					}
-
 				}
 			}
-				
-						
 		}
 	}
 	putchar('\n');
