@@ -9,14 +9,44 @@ int main(void)
 	int number;
 	int numberTwo;
 	
-	for (number = 0; number <= 99; number++)
-	{
-		for (numberTwo = 0; numberTwo <= 99; numberTwo++)
+	while (number <= 99)
+	{	
+		numberTwo = number + 1;	
+		while (numberTwo <= 99)
 		{
-			putchar(number/10 + '0');
-			putchar(number%10 + '0');
+			if (number == numberTwo)
+			{
+			}
+			else if (number > numberTwo)
+			{
+			}
+			else
+			{
+				putchar(number / 10 + '0');
+				putchar(number % 10 + '0');
+				putchar(' ');
+				putchar(numberTwo / 10 + '0');
+				putchar(numberTwo % 10 + '0');
+				
+				if (number == 98 && numberTwo == 99)
+				{
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+			numberTwo++;
 		}
+		number++;
+
+		
 	}
+	
+
+	
+	
 	putchar('\n');
 	return (0);
 }
