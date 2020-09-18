@@ -8,16 +8,13 @@ int main(void)
 {
 	int number;
 	int numberTwo;
-	
+
 	while (number <= 99)
-	{	
-		numberTwo = number + 1;	
+	{
+		numberTwo = number + 1;
 		while (numberTwo <= 99)
 		{
-			if (number == numberTwo)
-			{
-			}
-			else if (number > numberTwo)
+			if (number == numberTwo || number > numberTwo)
 			{
 			}
 			else
@@ -27,7 +24,6 @@ int main(void)
 				putchar(' ');
 				putchar(numberTwo / 10 + '0');
 				putchar(numberTwo % 10 + '0');
-				
 				if (number == 98 && numberTwo == 99)
 				{
 				}
@@ -40,13 +36,7 @@ int main(void)
 			numberTwo++;
 		}
 		number++;
-
-		
 	}
-	
-
-	
-	
 	putchar('\n');
 	return (0);
 }
