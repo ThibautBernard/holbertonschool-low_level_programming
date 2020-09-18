@@ -14,20 +14,14 @@ int main(void)
 		numberTwo = number + 1;
 		while (numberTwo <= 99)
 		{
-			if (number == numberTwo || number > numberTwo)
-			{
-			}
-			else
+			if (number != numberTwo || number < numberTwo)
 			{
 				putchar(number / 10 + '0');
 				putchar(number % 10 + '0');
 				putchar(' ');
 				putchar(numberTwo / 10 + '0');
 				putchar(numberTwo % 10 + '0');
-				if (number == 98 && numberTwo == 99)
-				{
-				}
-				else
+				if (number < 98 && numberTwo < 99)
 				{
 					putchar(',');
 					putchar(' ');
