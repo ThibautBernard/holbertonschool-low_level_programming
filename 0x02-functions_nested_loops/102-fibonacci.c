@@ -6,16 +6,16 @@
  */
 int main(void)
 {
-	int sum;
-	long long int lastNumber = 1;
-	long long int currentNumber = 1;
+	long int sum;
+	long int lastNumber = 1;
+	long int currentNumber = 1;
 	int i;
 
 	printf("%d, ", 1);
 	for (i = 1; i < 50; i++)
 	{
 		sum = lastNumber + currentNumber;
-		printf("%d, ", sum);
+		printf("%ld, ", sum);
 		lastNumber = currentNumber;
 		currentNumber = sum;
 	}
