@@ -8,29 +8,24 @@ int _putchar(char c);
  */
 void jack_bauer(void)
 {
-	int mill;
-	int cent;
-	int diz;
-	int unit;
+	int y;
+	int c;
 
-	for (mill = 0; mill <= 2; mill++)
+	y = 0;
+	while (y <= 23)
 	{
-		for (cent = 0; cent <= 3; cent++)
+		c = 0;
+		while (c <= 59)
 		{
-			for (diz = 0; diz <= 5; diz++)
-			{
-
-				for (unit = 0; unit <= 9; unit++)
-				{
-					_putchar(mill + '0');
-					_putchar(cent + '0');
-					_putchar(':');
-					_putchar(diz + '0');
-					_putchar(unit  + '0');
-					_putchar('\n');
-				}
-			}
+			_putchar(y / 10 + '0');
+			_putchar(y % 10 + '0');
+			_putchar(':');
+			_putchar(c / 10 + '0');
+			_putchar(c % 10 + '0');
+			_putchar('\n');
+			c++;
 		}
+		y++;
 	}
 }
 
