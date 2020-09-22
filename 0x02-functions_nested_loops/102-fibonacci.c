@@ -11,19 +11,15 @@ int main(void)
 	int i;
 	int y;
 
-	printf("%d, ", 1);
 	for (i = 1; i < 50; i++)
 	{
-		sum = i;
-		printf("%d, ", sum + i);
+		printf("%d, ", i + (i-1));
 	}
 	printf("\n");
 
-	printf("%d, ", 2);
 	for (y = 2; y < 50; y++)
 	{
-		sum2 = y;
-		printf("%d, ", sum2 + y);
+		printf("%d, ", y + (y-1));
 	}
 
 	printf("\n");
