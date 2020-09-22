@@ -7,21 +7,19 @@
 int main(void)
 {
 	int sum;
-	int sum2;
+	long long int lastNumber = 1;
+	long long int currentNumber = 1;
 	int i;
-	int y;
 
+	printf("%d, ", 1);
 	for (i = 1; i < 50; i++)
 	{
-		printf("%d, ", i + (i - 1));
+		sum = lastNumber + currentNumber;
+		printf("%d, ", sum);
+		lastNumber = currentNumber;
+		currentNumber = sum;
 	}
 	printf("\n");
 
-	for (y = 2; y < 50; y++)
-	{
-		printf("%d, ", y + (y - 1));
-	}
-
-	printf("\n");
 	return (0);
 }
