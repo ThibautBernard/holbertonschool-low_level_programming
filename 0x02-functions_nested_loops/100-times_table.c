@@ -4,15 +4,15 @@ int _putchar(char c);
 
 /**
  * conditionLoop - check the value of 2 integer and print something different
+ * in function of n given
  * @n: value from counter first loop * the second
  * @counterSecondLoop: counter from the second loop
  * Return: multiple space and value of n, if function of his value
  */
 void conditionLoop(int n, int counterSecondLoop)
 {
-	int value;
+	int value = 0;
 
-	value = 0;
 	if (n < 10)
 	{
 		if (counterSecondLoop != 0)
@@ -51,7 +51,7 @@ void print_times_table(int n)
 	int y;
 	int counter;
 
-	if (n < 15 && n > 0)
+	if (n >= 0 && n <= 15)
 	{
 		for (i = 0; i <= n; i++)
 		{
