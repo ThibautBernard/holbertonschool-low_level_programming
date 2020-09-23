@@ -19,7 +19,10 @@ int main(void)
 		currentNumber = sum;
 		if (!(sum > 4000000))
 		{
-			sumtot += sum;
+			if (sum % 2 == 0)
+			{
+				sumtot += sum;
+			}
 		}
 	}
 	printf("%ld", sumtot);
