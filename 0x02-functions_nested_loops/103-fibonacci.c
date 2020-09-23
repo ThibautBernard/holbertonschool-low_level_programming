@@ -2,7 +2,7 @@
 
 /**
  * main - entry poiunt
- * Return: sum of multipe of 3 and 5 until 1024
+ * Return: sum of even valued terms in the suit of fibonnaci
  */
 int main(void)
 {
