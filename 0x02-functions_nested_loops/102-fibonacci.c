@@ -12,7 +12,7 @@ int main(void)
 	int i;
 
 	printf("%d, ", 1);
-	for (i = 1; i <= 50; i++)
+	for (i = 1; i <= 49; i++)
 	{
 		sum = lastNumber + currentNumber;
 		printf("%lld, ", sum);
