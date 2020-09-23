@@ -16,7 +16,7 @@ int main(void)
 	{
 		sum = lastNumber + currentNumber;
 		printf("%ld", sum);
-		if ( i != 49)
+		if (i != 49)
 		{
 			printf(", ");
 		}
