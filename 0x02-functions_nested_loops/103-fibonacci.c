@@ -12,6 +12,7 @@ int main(void)
 	long int sumtot;
 	int i;
 
+	sumtot = 0;
 	for (i = 1; i <= 49; i++)
 	{
 		sum = lastNumber + currentNumber;
@@ -21,7 +22,7 @@ int main(void)
 		{
 			if (sum % 2 == 0)
 			{
-				sumtot += sum;
+				sumtot = sumtot + sum;
 			}
 		}
 	}
