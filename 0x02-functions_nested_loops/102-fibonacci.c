@@ -15,7 +15,11 @@ int main(void)
 	for (i = 1; i <= 49; i++)
 	{
 		sum = lastNumber + currentNumber;
-		printf("%ld, ", sum);
+		printf("%ld", sum);
+		if ( i != 49)
+		{
+			printf(", ");
+		}
 		lastNumber = currentNumber;
 		currentNumber = sum;
 	}
