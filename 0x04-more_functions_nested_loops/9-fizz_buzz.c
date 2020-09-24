@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - entry point
  * print 1 to 100 except multiple of 3 & 5 || multiple  3 + 5
