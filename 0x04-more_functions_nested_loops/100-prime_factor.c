@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	long int i, max, n, isprime;
+	long int i, max, n;
 
 	n = 612852475143;
 	max = -1;
@@ -29,4 +29,5 @@ int main(void)
 		max = n;
 	}
 	printf("%ld\n", max);
+	return (0);
 }
