@@ -6,19 +6,15 @@
  */
 int minus(char *c)
 {
-	int sign = 1, plus = 0, low = 0, i;
+	int sign = 1, i;
 
-	for (i = 0; c[i] != '\0'; i++)
+	for (i = 0; c[i] != '\0' ; i++)
 	{
 		if (c[i] == '-')
-			low++;
-		else if (c[i] == '+')
-			plus++;
+			sign *= -1;
 		else if (c[i] >= '0' && c[i] <= '9')
 			break;
 	}
-	if (low > plus)
-		sign *= -1;
 	return (sign);
 }
 /**
