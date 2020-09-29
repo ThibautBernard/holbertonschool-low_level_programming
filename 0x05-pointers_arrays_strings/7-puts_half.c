@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
  * puts_half - print second part of a string if is pair
  * @str: string given
@@ -23,8 +23,15 @@ void puts_half(char *str)
 	}
 	else
 	{
-		for (p = 0; p < n; p++)
-			_putchar(str[p]);
+		p = 0;
+		while (p < length)
+		{
+			if (p >= n)
+				_putchar(str[p]);
+			else
+				p++;
+			p++;
+		}
 	}
 	_putchar('\n');
 }
