@@ -28,8 +28,6 @@ void puts_half(char *str)
 		{
 			if (p >= n)
 				_putchar(str[p]);
-			else
-				p++;
 			p++;
 		}
 	}
