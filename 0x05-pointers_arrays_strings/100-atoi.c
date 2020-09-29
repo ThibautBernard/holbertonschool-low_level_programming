@@ -12,7 +12,7 @@ int _atoi(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
-			test = (test * 10) + s[i] - '0';
+			test = (test * 10) + (s[i] - '0');
 		else if (test > 0 && !(s[i] >= 0 && s[i] <= 9))
 		{
 			if (low > plus)
