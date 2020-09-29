@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
  * print_rev - reverse a string
  * @s: string given
@@ -9,12 +9,17 @@ void print_rev(char *s)
 {
 	int i, y, length;
 
-	length = 0;
 	i = 0;
+	length = 0;
 	for (y = 0; *(s + y) != '\0'; y++)
+	{
 		length++;
+	}
+	length = length - 1;
 	for (i = length; i >= 0; i--)
+	{
 		_putchar(s[i]);
+	}
 	_putchar('\n');
 }
 
