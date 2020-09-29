@@ -6,7 +6,7 @@
  */
 int minus(char *c)
 {
-	int sign, plus = 0, low = 0, i;
+	int sign = 1, plus = 0, low = 0, i;
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
@@ -18,9 +18,7 @@ int minus(char *c)
 			break;
 	}
 	if (low > plus)
-		sign = -1;
-	else
-		sign = 1;
+		sign *= -1;
 	return (sign);
 }
 /**
