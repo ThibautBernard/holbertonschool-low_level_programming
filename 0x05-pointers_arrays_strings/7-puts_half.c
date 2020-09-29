@@ -7,7 +7,7 @@
  */
 void puts_half(char *str)
 {
-	int i, y, n, length;
+	int i, y, n, p, length;
 
 	n = 0;
 	length = 0;
@@ -23,7 +23,8 @@ void puts_half(char *str)
 	}
 	else
 	{
-		_putchar(str[n - 1]);
+		for (p = 0; p < n; p++)
+			_putchar(str[p]);
 	}
 	_putchar('\n');
 }
