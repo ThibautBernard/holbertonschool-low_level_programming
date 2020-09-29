@@ -1,41 +1,33 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
- * *_strcpy - copy array to another one with \0
- * @dest: new array
- * @src: original array
- * Return: the new array
+ * _atoi - convert char to int (only number)
+ * @s: string given
+ * Return: the int number
  */
 int _atoi(char *s)
 {
-	int i, sign; 
-	int tab[100];
+	int i, plus = 0, low = 0;
+	int test = 0;
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == 32)
-		{	
-			i++;
+		if (s[i] >= '0' && s[i] <= '9')
+			test = (test * 10) + s[i] - '0';
+		else if (test > 0 && !(s[i] >= 0 && s[i] <= 9))
+		{
+			if (low > plus)
+				test = test * -1;
+			return (test);
 		}
 		else if (s[i] == '-' || s[i] == '+')
 		{
-			sign = s[i];
-			i++;	
+			if (s[i] == '-')
+				low++;
+			else
+				plus++;
 		}
-		else if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
-		{
-			i++;
-		}
-		else if (s[i] >= '0' && s[i] <= '9')
-		{
-			tab[i] = putchar(s[i] + '0');
-		}
-		else
-		{
-			return (0);
-		}
-		tab[15] = sign;		
-	
 	}
-	return (*tab);
-	
+	if (low > plus)
+		test = test * -1;
+	return (test);
 }
