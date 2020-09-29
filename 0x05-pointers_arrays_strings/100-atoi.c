@@ -20,7 +20,7 @@ int minus(char *c)
 	if (low > plus)
 		sign = -1;
 	else
-		sign = +1;
+		sign = 1;
 	return (sign);
 }
 /**
