@@ -7,12 +7,10 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int i, y, length1 = 0, length2 = 0;
+	int length1 = 0, length2 = 0;
 
-	for (y = 0; s1[y] != '\0'; y++)
-		length1++;
-	for (i = 0; s2[i] != '\0'; i++)
-		length2++;
+	length1 = s1[0];
+	length2 = s2[0];
 	if (length1 < length2)
 		return (-15);
 	else if (length1 == length2)
