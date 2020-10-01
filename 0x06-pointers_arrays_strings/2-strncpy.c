@@ -22,6 +22,5 @@ char *_strncpy(char *dest, char *src, int n)
 		*ptr = '\0';
 		ptr++;
 	}
-	*ptr = '\0';
 	return (dest);
 }
