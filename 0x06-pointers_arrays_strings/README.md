@@ -1,4 +1,4 @@
-# Pointers, Array 
+# Pointers, Array && more functions of standard lib
 
 * Re-writing function in C (as **print_number**, **strcmp**, **strncat**, **infinite_add(add 2 string of integer)**...)
 * No printf 
