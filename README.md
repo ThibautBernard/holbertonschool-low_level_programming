@@ -4,3 +4,5 @@
 * [Algorithms, Header files, Functions, Nested loops](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x02-functions_nested_loops)
 * [Debugging](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x03-debugging)
 * [Algorithms & nested loops](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x04-more_functions_nested_loops)
+* [Pointers, Array, Reverse Engineering](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x05-pointers_arrays_strings)
+* [Pointers, Array](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x06-pointers_arrays_strings)
