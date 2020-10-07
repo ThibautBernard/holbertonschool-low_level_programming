@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * strln - length of string
  * @s: the string
@@ -20,17 +21,16 @@ int strln(char *s)
  * calcul - check the string if its palindrome
  * @s: the string
  * @y: the length
+ * @i: the start
  * Return: 1 if its true or 0 if not palindrome
  */
-int calcul(char *s, int y)
+int calcul(char *s, int y, int i)
 {
-	if (*s != *(s + y)  || y < 0)
-		return (0);
-	if (*s == *(s + y))
-	{
-		calcul(s + 1, y - 1);
-	}
+	if (i == y)
 		return (1);
+	if (s[i] == s[y])
+		return (calcul(s, y - 1, i + 1));
+	return (0);
 
 }
 /**
@@ -43,5 +43,5 @@ int is_palindrome(char *s)
 		int length = 0;
 
 		length = strln(s);
-		return (calcul(s, length - 1));
+		return (calcul(s, length - 1, 0));
 }
