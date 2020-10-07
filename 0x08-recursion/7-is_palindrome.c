@@ -26,7 +26,7 @@ int strln(char *s)
  */
 int calcul(char *s, int y, int i)
 {
-	if (i == y)
+	if (i == y || (i == y - 1 && s[i] == s[y]))
 		return (1);
 	if (s[i] == s[y])
 		return (calcul(s, y - 1, i + 1));
