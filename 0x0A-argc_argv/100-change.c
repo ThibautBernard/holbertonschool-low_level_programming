@@ -1,0 +1,92 @@
+#include <stdio.h>
+/**
+ * minus - count the number of sign (- or + )
+ * @c: char
+ * Return: Return -1 if there is more sign '-'
+ */
+int minus(char *c)
+{
+	int sign = 1, i;
+
+	for (i = 0; c[i] != '\0' ; i++)
+	{
+		if (c[i] == '-')
+			sign *= -1;
+		else if (c[i] >= '0' && c[i] <= '9')
+			break;
+	}
+	return (sign);
+}
+/**
+ * _atoi - convert char to int (only number)
+ * @s: string given
+ * Return: the int number
+ */
+int _atoi(char *s)
+{
+	int i, sign;
+	int test = 0;
+
+	sign = minus(s);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] >= '0' && s[i] <= '9')
+			test = test * 10 + sign * (s[i] - '0');
+		else if (test > 0 && !(s[i] >= 0 && s[i] <= 9))
+		{
+			return (test);
+		}
+	}
+	return (test);
+}
+/**
+ * main - entry point
+ * @argc: number of arguments
+ * @argv: value of arguments
+ * Return: (0)
+ */
+int main(int argc, char **argv)
+{
+		int i, y, ret, tab[5] = {25, 10, 5, 2, 1};
+
+		y = _atoi(*(argv + 1));
+		if (argc != 2)
+		{
+				printf("Error \n");
+				return (1);
+		}
+		else if (y < 1)
+			printf("0\n");
+		else
+		{
+			i = 0;
+			while (i < 5)
+			{
+				if (y < tab[i])
+					i++;
+				else if (y == tab[i])
+				{	
+					if (ret > 0)
+						printf("%d\n", ret);
+					else
+						printf("1\n");
+					return (0);
+				}
+				else if (y % tab[i] != 0 || y % tab[i] == 0)
+				{
+					if (y % tab[i] != 0)
+					{
+						ret = y % tab[i];
+						y = y - y % tab[i];
+					}
+					else 
+					{
+						y = y / tab[i];
+						printf("%d\n", y + ret);
+						return (0);
+					}
+				}
+			}
+		}
+		return (0);
+}
