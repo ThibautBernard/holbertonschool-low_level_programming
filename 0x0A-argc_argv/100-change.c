@@ -47,7 +47,7 @@ int _atoi(char *s)
  */
 int main(int argc, char **argv)
 {
-		int i, y, sum = 0, ret, tab[5] = {25, 10, 5, 2, 1};
+		int i, y, sum = 0, tab[5] = {25, 10, 5, 2, 1};
 
 		y = _atoi(*(argv + 1));
 		if (y < 1)
