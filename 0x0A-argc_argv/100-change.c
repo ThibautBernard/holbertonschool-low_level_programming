@@ -49,19 +49,19 @@ int main(int argc, char **argv)
 {
 		int i, y, sum = 0, tab[5] = {25, 10, 5, 2, 1};
 
-		y = _atoi(*(argv + 1));
-		if (y < 1)
-		{
-			printf("0\n");
-			return (0);
-		}
 		if (argc != 2)
 		{
-			printf("Error \n");
+			printf("Error\n");
 			return (1);
 		}
 		else
 		{
+			y = _atoi(*(argv + 1));
+			if (y < 1)
+			{
+				printf("0\n");
+				return (0);
+			}
 			i = 0;
 			while (i < 5)
 			{
