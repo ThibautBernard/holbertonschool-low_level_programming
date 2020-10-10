@@ -57,15 +57,15 @@ int main(int argc, char **argv)
 		{
 			while (z < argc)
 			{
-				y = _atoi(*(argv + z));
-				if (y < 0 || y > 0)
-				{
-					sum = sum + y;
-				}
-				else
+				if (!(**(argv + z) >= '0' && **(argv + z) <= '9'))
 				{
 					printf("Error\n");
 					return (1);
+				}
+				else
+				{
+					y = _atoi(*(argv + z));
+					sum = sum + y;
 				}
 				z++;
 			}
