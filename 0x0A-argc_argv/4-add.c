@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 		{
 			while (z < argc)
 			{
-				if (**(argv + z) >= '0' && **(argv + z) <= '9')
+				if (**(argv + z) >= '0' && **(argv + z) <= '9' || **(argv + z) == '-')
 				{
 					y = _atoi(*(argv + z));
 					sum = sum + y;
