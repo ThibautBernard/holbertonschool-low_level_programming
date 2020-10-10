@@ -7,3 +7,7 @@
 * [Algorithms & nested loops](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x04-more_functions_nested_loops)
 * [Pointers, Array, Reverse Engineering](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x05-pointers_arrays_strings)
 * [Pointers, Array](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x06-pointers_arrays_strings)
+* [Pointer of pointer && Multidimensional Array](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x07-pointers_arrays_strings)
+* [Recursivity and mathematics](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x08-recursion)
+* [Create && use static libraries](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x09-static_libraries)
+* [Argc - Argv](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0A-argc_argv)
