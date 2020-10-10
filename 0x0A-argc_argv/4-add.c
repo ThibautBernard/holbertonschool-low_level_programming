@@ -57,12 +57,7 @@ int main(int argc, char **argv)
 		{
 			while (z < argc)
 			{
-				if (**(argv + z) >= 'a' && **(argv + z) <= 'z')
-				{
-					printf("Error\n");
-					return (1);
-				}
-				else if (**(argv + z) >= 'A' && **(argv + z) <= 'Z')
+				if (_atoi(*(argv + z)) == 0 && **(argv + z) != '0')
 				{
 					printf("Error\n");
 					return (1);
@@ -72,9 +67,9 @@ int main(int argc, char **argv)
 					y = _atoi(*(argv + z));
 					sum = sum + y;
 				}
-					z++;
+				z++;
 			}
-			printf("%d\n", sum);
+				printf("%d\n", sum);
 		}
 		return (0);
 }
