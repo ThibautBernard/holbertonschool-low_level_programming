@@ -60,12 +60,12 @@ int main(int argc, char **argv)
 				if (**(argv + z) >= 'a' && **(argv + z) <= 'z')
 				{
 					printf("Error\n");
-					return (0);
+					return (1);
 				}
 				else if (**(argv + z) >= 'A' && **(argv + z) <= 'Z')
 				{
 					printf("Error\n");
-					return (0);
+					return (1);
 				}
 				else
 				{
