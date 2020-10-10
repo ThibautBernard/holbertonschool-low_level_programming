@@ -47,7 +47,7 @@ int _atoi(char *s)
  */
 int main(int argc, char **argv)
 {
-		int y, z = 1, sum = 0;
+		int i = 0, y, z = 1, sum = 0;
 
 		if (argc < 2)
 		{
@@ -57,6 +57,18 @@ int main(int argc, char **argv)
 		{
 			while (z < argc)
 			{
+				for (i = 0; argv[z][i]; i++)
+				{
+					if (argv[z][i] == '-' || argv[z][i] == '+')
+					{
+						break;
+					}
+					if (argv[z][i] < '0' || argv[z][i] > '9')
+					{
+						printf("Error\n");
+						return (1);
+					}
+				}
 				if (_atoi(*(argv + z)) == 0 && **(argv + z) != '0')
 				{
 					printf("Error\n");
