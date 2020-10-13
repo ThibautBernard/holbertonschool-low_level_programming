@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * *argstostr - concatene argv of main in one string
  * @ac: number of string
@@ -24,7 +23,8 @@ char *argstostr(int ac, char **av)
 		}
 		i++;
 	}
-	str = malloc(sizeof(char) * (counter + 1));
+	counter = counter + ac;
+	str = malloc(sizeof(char) * (counter));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
