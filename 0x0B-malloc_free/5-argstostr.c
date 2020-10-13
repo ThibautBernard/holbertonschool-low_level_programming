@@ -8,11 +8,12 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i = 0, y, z, counter = 0;
+	int i, y, z, counter = 0;
 	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
+	i = 0;
 	while (i < ac)
 	{
 		y = 0;
@@ -36,8 +37,7 @@ char *argstostr(int ac, char **av)
 		{
 			str[z++] = av[i][y++];
 		}
-		if (i + 1 != ac)
-			str[z++] = '\n';
+		str[z++] = '\n';
 		i++;
 	}
 	str[z] = '\0';
