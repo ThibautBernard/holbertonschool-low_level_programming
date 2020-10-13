@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * *argstostr - concatene argv of main in one string
  * @ac: number of string
@@ -8,7 +9,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i = 1, y, z, counter = 0;
+	int i = 0, y, z, counter = 0;
 	char *str;
 
 	if (ac == 0 || av == NULL)
