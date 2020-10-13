@@ -90,5 +90,6 @@ char **strtow(char *str)
 		y = 0;
 		l = 0;
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }
