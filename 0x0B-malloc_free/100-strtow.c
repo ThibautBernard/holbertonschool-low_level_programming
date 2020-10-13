@@ -63,7 +63,7 @@ char **strtow(char *str)
 	if (str == NULL || str == 0)
 		return (NULL);
 	counter = n_word(str);
-	ptr = malloc(sizeof(char *) * counter);
+	ptr = malloc(sizeof(char *) * (counter + 1));
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < counter; i++)
