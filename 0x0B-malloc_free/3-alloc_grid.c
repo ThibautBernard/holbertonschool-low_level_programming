@@ -21,14 +21,15 @@ int _strlen(char *s)
  */
 int **alloc_grid(int width, int height)
 {
-	int **array = malloc(width * sizeof(int *)), i, y;
+	int **array, i, y;
 
 	if ((width && height <= 0) || width <= 0 || height <= 0)
 		return (NULL);
+	array = malloc(width * sizeof(int *));
 	if (array == NULL)
 		return (NULL);
 	for (i = 0; i < width; i++)
-		array[i] = malloc(height * sizeof(int));
+		array[i] = malloc(height * sizeof(int *));
 	for (i = 0; i < width; i++)
 	{
 		for (y = 0; y < height; y++)
