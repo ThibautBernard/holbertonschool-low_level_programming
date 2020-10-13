@@ -23,8 +23,8 @@ char *argstostr(int ac, char **av)
 		}
 		i++;
 	}
-	counter = counter + (ac - 1);
-	str = malloc(sizeof(char) * (counter));
+	counter = counter + ac;
+	str = malloc(sizeof(char) * (counter + 1));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
