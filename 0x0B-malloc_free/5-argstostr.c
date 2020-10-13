@@ -23,8 +23,8 @@ char *argstostr(int ac, char **av)
 		}
 		i++;
 	}
-	counter = counter + ac;
-	str = malloc(sizeof(char) * (counter + 1));
+	counter = counter + (ac + 1);
+	str = malloc(sizeof(char) * counter);
 	if (str == NULL)
 		return (NULL);
 	i = 0;
@@ -34,9 +34,7 @@ char *argstostr(int ac, char **av)
 		y = 0;
 		while (av[i][y])
 		{
-			*(str + z) = av[i][y];
-			z++;
-			y++;
+			str[z++] = av[i][y++];
 		}
 		if (i + 1 != ac)
 			str[z++] = '\n';
