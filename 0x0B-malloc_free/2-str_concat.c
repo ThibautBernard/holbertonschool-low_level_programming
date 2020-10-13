@@ -28,9 +28,20 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL || s2 == NULL)
 	{
 		if (s1 == NULL)
+		{
 			length_s1 = 0;
+			length_s2 = _strlen(s2);
+		}
 		else if (s2 == NULL)
+		{
+			length_s1 = _strlen(s1);
 			length_s2 = 0;
+		}
+		else if (s1 == NULL && s2 == NULL)
+		{
+			length_s1 = 0;
+			length_s2 = 0;
+		}
 	}
 	else
 	{
