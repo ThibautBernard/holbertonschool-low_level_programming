@@ -64,7 +64,6 @@ char **strtow(char *str)
 
 	if (str == NULL || str == 0)
 		return (NULL);
-
 	counter = n_word(str);
 	ptr = malloc(sizeof(char *) * (counter + 1));
 	if (ptr == NULL)
@@ -88,7 +87,7 @@ char **strtow(char *str)
 			ptr[i][y] = str[m];
 			y++;
 		}
-		ptr[i][y + 1] = '\0';
+		ptr[i][y] = '\0';
 		z += length;
 		y = 0;
 	}
