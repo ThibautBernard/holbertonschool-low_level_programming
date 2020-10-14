@@ -59,7 +59,7 @@ void free_array(char **ptr, int n)
  */
 char **strtow(char *str)
 {
-	int i, m = 0, y = 0, s = 0, z = 0, counter = 0,  length = 0;
+	int i, m = 0, y = 0, z = 0, counter = 0,  length = 0;
 	char **ptr;
 
 	if (str == NULL || str == 0)
@@ -75,14 +75,14 @@ char **strtow(char *str)
 			if (str[z] != ' ')
 				break;
 		}
-		length = _strlen(str + s);
+		length = _strlen(str + z);
 		ptr[i] = malloc(sizeof(char) * (length + 1));
 		if (ptr[i] == NULL)
 		{
 			free_array(ptr, counter);
 			return (NULL);
 		}
-		for (m = z; m < (length + z + 1); m++)
+		for (m = z; m < (length + z); m++)
 		{
 			ptr[i][y] = str[m];
 			y++;
