@@ -89,7 +89,7 @@ char **strtow(char *str)
 			}
 			s++;
 		}
-		ptr[i][y] = '\0';
+		ptr[i][y++] = '\0';
 		y = 0;
 		l = 0;
 	}
