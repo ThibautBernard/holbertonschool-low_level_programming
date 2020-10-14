@@ -31,10 +31,9 @@ int n_word(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && str[i - 1] != ' ')
+		if ((str[i - 1] == ' ' && str[i] != ' ') || (str[i] != ' ' && i == 0))
 			counter++;
 	}
-	counter = counter - 1;
 	return (counter);
 }
 /**
