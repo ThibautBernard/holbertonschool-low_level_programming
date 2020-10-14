@@ -79,7 +79,7 @@ char **strtow(char *str)
 		ptr[i] = malloc(sizeof(char) * (length + 1));
 		if (ptr[i] == NULL)
 		{
-			free_array(ptr, (length + 1));
+			free_array(ptr, i);
 			return (NULL);
 		}
 		for (m = z; m < (length + z); m++)
