@@ -12,8 +12,13 @@ int _strlen(char *s)
 
 	if (s == NULL)
 		return (0);
-	for (i = 0; *(s + i) != '\0'; i++)
-		count++;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == ' ' && count > 0)
+			break;
+		if (s[i] != ' ')
+			count++;
+	}
 	return (count);
 }
 /**
@@ -56,10 +61,9 @@ void free_array(char **ptr, int n)
  */
 char **strtow(char *str)
 {
-	int i, m = 0, y = 0, s = 0, counter = 0, l = 0, length = 0;
+	int i, m = 0, y = 0, counter = 0, l = 0, length = 0;
 	char **ptr;
 
-	length = _strlen(str);
 	if (str == NULL || str == 0)
 		return (NULL);
 	counter = n_word(str);
@@ -68,23 +72,24 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < counter; i++)
 	{
-		ptr[i] = malloc(sizeof(char) * length);
+		length = _strlen(str);
+		ptr[i] = malloc(sizeof(char) * (length + 1));
 		if (ptr[i] == NULL)
 		{
 			free_array(ptr, counter);
 			return (NULL);
 		}
-		for (m = 0; m < length; m++)
+		for (m = 0; m < 50; m++)
 		{
-			if (str[s] == ' ' && l > 0)
+			if (*(str) == ' ' && l > 0)
 				break;
-			if (str[s] != ' ')
+			if (*(str) != ' ')
 			{
-				ptr[i][y] = str[s];
+				ptr[i][y] = *(str);
 				y++;
 				l++;
 			}
-			s++;
+			str++;
 		}
 		ptr[i][y] = '\0';
 		y = 0;
