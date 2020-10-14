@@ -82,7 +82,7 @@ char **strtow(char *str)
 			free_array(ptr, counter);
 			return (NULL);
 		}
-		for (m = z; str[m] != ' '; m++)
+		for (m = z; m < (length + z + 1); m++)
 		{
 			ptr[i][y] = str[m];
 			y++;
