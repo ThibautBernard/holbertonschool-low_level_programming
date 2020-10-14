@@ -87,8 +87,8 @@ char **strtow(char *str)
 			ptr[i][y] = str[m];
 			y++;
 		}
-		ptr[i][y + 1] = '\0';
 		z += length;
+		ptr[i][y + 1] = '\0';
 		y = 0;
 	}
 	ptr[i] = '\0';
