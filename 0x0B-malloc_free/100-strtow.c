@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * _strlen - count length of a string
  * @s: pointer char
@@ -61,7 +60,7 @@ void free_array(char **ptr, int n)
  */
 char **strtow(char *str)
 {
-	int i, m = 0, y = 0, counter = 0, l = 0, length = 0;
+	int i, m = 0, y = 0, s = 0, counter = 0, l = 0, length = 0;
 	char **ptr;
 
 	if (str == NULL || str == 0)
@@ -72,7 +71,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < counter; i++)
 	{
-		length = _strlen(str);
+		length = _strlen(str + s);
 		ptr[i] = malloc(sizeof(char) * (length + 1));
 		if (ptr[i] == NULL)
 		{
@@ -81,15 +80,15 @@ char **strtow(char *str)
 		}
 		for (m = 0; m < 50; m++)
 		{
-			if (*(str) == ' ' && l > 0)
+			if (str[s] == ' ' && l > 0)
 				break;
-			if (*(str) != ' ')
+			if (str[s] != ' ')
 			{
-				ptr[i][y] = *(str);
+				ptr[i][y] = str[s];
 				y++;
 				l++;
 			}
-			str++;
+			s++;
 		}
 		ptr[i][y] = '\0';
 		y = 0;
