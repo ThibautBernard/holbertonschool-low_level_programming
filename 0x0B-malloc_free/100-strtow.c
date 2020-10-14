@@ -59,17 +59,23 @@ void free_array(char **ptr, int n)
  */
 char **strtow(char *str)
 {
-	int i, m = 0, y = 0, s = 0, counter = 0, l = 0, length = 0;
+	int i, m = 0, y = 0, s = 0, z = 0, counter = 0,  length = 0;
 	char **ptr;
 
 	if (str == NULL || str == 0)
 		return (NULL);
+
 	counter = n_word(str);
 	ptr = malloc(sizeof(char *) * (counter + 1));
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0; i < counter; i++)
 	{
+		for (; str[z] != '\0'; z++)
+		{
+			if (str[z] != ' ')
+				break;
+		}
 		length = _strlen(str + s);
 		ptr[i] = malloc(sizeof(char) * (length + 1));
 		if (ptr[i] == NULL)
@@ -77,21 +83,14 @@ char **strtow(char *str)
 			free_array(ptr, counter);
 			return (NULL);
 		}
-		for (m = 0; m < 50; m++)
+		for (m = z; str[m] != ' '; m++)
 		{
-			if (str[s] == ' ' && l > 0)
-				break;
-			if (str[s] != ' ')
-			{
-				ptr[i][y] = str[s];
-				y++;
-				l++;
-			}
-			s++;
+			ptr[i][y] = str[m];
+			y++;
 		}
 		ptr[i][y + 1] = '\0';
+		z += length;
 		y = 0;
-		l = 0;
 	}
 	ptr[i] = '\0';
 	return (ptr);
