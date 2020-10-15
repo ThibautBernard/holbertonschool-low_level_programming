@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * *_calloc - allocate array and fill with 0
  * @nmemb: length of the array
@@ -10,11 +9,11 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	char *arr;
+	int *arr;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	arr = malloc(sizeof(size) * nmemb);
+	arr = malloc(sizeof(size) * (nmemb + 1));
 	if (arr == NULL)
 		return (NULL);
 	for (i = 0; i < nmemb; i++)
