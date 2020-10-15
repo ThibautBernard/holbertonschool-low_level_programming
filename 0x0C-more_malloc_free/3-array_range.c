@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * *array_range - allocate an array and fill of min to max
  * @min: first element
@@ -21,6 +20,5 @@ int *array_range(int min, int max)
 		arr[y] = i;
 		y++;
 	}
-	arr[y] = '\0';
 	return (arr);
 }
