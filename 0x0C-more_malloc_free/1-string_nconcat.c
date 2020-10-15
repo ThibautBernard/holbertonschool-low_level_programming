@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _strlen - count length of a string
  * @s: pointer char
@@ -10,7 +11,7 @@ int _strlen(char *s)
 	int i, count = 0;
 
 	if (s == NULL)
-		return (0);
+		return (count);
 	for (i = 0; *(s + i) != '\0'; i++)
 		count++;
 	return (count);
@@ -29,14 +30,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	length_s1 = _strlen(s1);
 	length_s2 = _strlen(s2);
-	if (length_s1 > 0 || length_s2 > 0)
-	{
-		if (n > length_s2 || (n == length_s2))
+		if (n >= length_s2 && length_s1 > 0)
 			str = malloc(sizeof(char) * (length_s1 + length_s2 + 1));
-		else if (length_s1 > 0 && length_s2 == 0)
-			str = malloc(sizeof(char) * (length_s1 + 1));
-		else
+		else if (length_s1 > 0 && n < length_s2)
 			str = malloc(sizeof(char) * (length_s1 + n + 1));
+		else if (length_s1 == 0 && n > length_s2)
+			str = malloc(sizeof(char) * (n + 1));
+		else if (length_s1 == 0 && n < length_s2)
+			str = malloc(sizeof(char) * (n + 1));
 		if (str == NULL)
 			return (NULL);
 		for (i = 0; i < length_s1; i++)
@@ -57,7 +58,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 				y++;
 			}
 		}
+		printf("%d", i);
 		str[i] = '\0';
-	}
 	return (str);
 }
