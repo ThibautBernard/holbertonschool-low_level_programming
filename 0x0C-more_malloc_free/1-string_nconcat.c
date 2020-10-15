@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * _strlen - count length of a string
  * @s: pointer char
@@ -56,7 +55,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 				y++;
 			}
 		}
-		printf("%d", i);
 		str[i] = '\0';
 	return (str);
 }
