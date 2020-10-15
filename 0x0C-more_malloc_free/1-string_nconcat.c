@@ -30,20 +30,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	length_s1 = _strlen(s1);
 	length_s2 = _strlen(s2);
-		if (n >= length_s2 && length_s1 > 0)
-			str = malloc(sizeof(char) * (length_s1 + length_s2 + 1));
-		else if (length_s1 > 0 && n < length_s2)
-			str = malloc(sizeof(char) * (length_s1 + n + 1));
-		else if (length_s1 == 0 && n > length_s2)
-			str = malloc(sizeof(char) * (n + 1));
-		else if (length_s1 == 0 && n < length_s2)
-			str = malloc(sizeof(char) * (n + 1));
-		if (str == NULL)
-			return (NULL);
-		for (i = 0; i < length_s1; i++)
-			str[i] = s1[i];
-		if (n > length_s2 || (n == length_s2))
+		if (n >= length_s2)
 		{
+			str = malloc(sizeof(char) * (length_s1 + length_s2 + 1));
+			if (str == NULL)
+				return (NULL);
+			for (i = 0; i < length_s1; i++)
+				str[i] = s1[i];
 			for (; i < length_s1 + length_s2; i++)
 			{
 				str[i] = s2[y];
@@ -52,6 +45,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		else
 		{
+			str = malloc(sizeof(char) * (length_s1 + n + 1));
+			if (str == NULL)
+				return (NULL);
+			for (i = 0; i < length_s1; i++)
+				str[i] = s1[i];
 			for (; i < (length_s1 + n); i++)
 			{
 				str[i] = s2[y];
