@@ -151,8 +151,6 @@ int main(int argc, char *argv[])
 		rest = 0;
 		for (y = length_s1 - 1; y >= 0; y--)
 		{
-			if ((s1[y] - '0') == 0 && (s2[i] - '0') == 0)
-				_putchar('0' + 0);
 			res_multi = (s1[y] - '0') * (s2[i] - '0') + rest + arr[l + m];
 			arr[l + m] = res_multi % 10;
 			rest = res_multi / 10;
