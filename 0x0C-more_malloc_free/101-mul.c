@@ -104,6 +104,25 @@ void _check_nb_arg(int argc)
 		}
 }
 /**
+ * print_array - print arr from the end to the start if number
+ * @arr: array given
+ * @length: length of the arr
+ * Return: nothing except value of array
+ */
+void print_array(int *arr, int length)
+{
+	int i;
+
+	i = length;
+	for (; arr[i] == 0; i--)
+	{
+	}
+	for (; i >= 0; i--)
+		_putchar(arr[i] + '0');
+	_putchar('\n');
+
+}
+/**
  * main - multiply 2 number given
  * @argc: number of arguments given
  * @argv: arguments content
@@ -132,6 +151,8 @@ int main(int argc, char *argv[])
 		rest = 0;
 		for (y = length_s1 - 1; y >= 0; y--)
 		{
+			if ((s1[y] - '0') == 0 && (s2[i] - '0') == 0)
+				_putchar('0' + 0);
 			res_multi = (s1[y] - '0') * (s2[i] - '0') + rest + arr[l + m];
 			arr[l + m] = res_multi % 10;
 			rest = res_multi / 10;
@@ -142,12 +163,7 @@ int main(int argc, char *argv[])
 		l++;
 	}
 	z = length_s2 + length_s1 - 1;
-	for (; arr[z] == 0; z--)
-	{
-	}
-	for (; z >= 0; z--)
-		_putchar(arr[z] + '0');
-	_putchar('\n');
+	print_array(arr, z);
 	free(arr);
 	return (0);
 }
