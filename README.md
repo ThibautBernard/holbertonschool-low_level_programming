@@ -11,3 +11,7 @@
 * [Recursivity and mathematics](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x08-recursion)
 * [Create && use static libraries](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x09-static_libraries)
 * [Argc - Argv](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0A-argc_argv)
+* [Malloc && Free](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0B-malloc_free)
+* [Create function Calloc | Realloc  && more ](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0C-more_malloc_free)
+
+
