@@ -1,5 +1,5 @@
-#ifndef _HOLBERTON_H
-#define _HOLBERTON_H
+#ifndef _0_OBJECT_LIKE_MACRO_H
+#define _0_OBJECT_LIKE_MACRO_H
 
 #define SIZE 1024
 
