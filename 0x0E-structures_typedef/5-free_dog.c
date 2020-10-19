@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
  * free_dog - free structure
@@ -10,5 +9,5 @@ void free_dog(dog_t *d)
 {
 	free(d->name);
 	free(d->owner);
-	free(d);
+	free(dog_t);
 }
