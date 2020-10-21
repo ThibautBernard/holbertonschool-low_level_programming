@@ -23,7 +23,7 @@ int (*get_op_func(char *s))(int, int)
 	while (s[0] != *ops[i].op && i < 5)
 	{
 		i++;
-		if (i == 5)
+		if (i == 5 || *(s + 1) != '\0')
 			return (NULL);
 	}
 	return (ops[i].f);
