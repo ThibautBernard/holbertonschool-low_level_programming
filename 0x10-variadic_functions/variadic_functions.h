@@ -2,6 +2,11 @@
 #define _VARIADIC_FUNCTIONS_H
 #include <stdarg.h>
 #include <stdlib.h>
+/**
+ * struct test - struct
+ * @op: char
+ * @f: fonction that return
+ */
 typedef struct test
 {
 	char *op;
