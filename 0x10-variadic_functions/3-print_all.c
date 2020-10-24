@@ -49,6 +49,7 @@ void print_s(va_list i)
 void print_all(const char * const format, ...)
 {
 	int i, y;
+	char *sep = "";
 	va_list args;
 	tpy ops[] = {
 	{"c", print_ch},
@@ -67,9 +68,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == *ops[y].op)
 			{
+				printf("%s", sep);
 				ops[y].f(args);
-				if (format[i + 1] != '\0')
-					printf(", ");
+				sep = ", ";
 			}
 			y++;
 		}
