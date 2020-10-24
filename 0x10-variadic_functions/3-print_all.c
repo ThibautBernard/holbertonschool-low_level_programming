@@ -38,9 +38,8 @@ void print_s(va_list i)
 	char *ptr = va_arg(i, char *);
 
 	if (ptr == NULL)
-		printf("(nil)");
-	else
-		printf("%s", ptr);
+		ptr = "(nil)";
+	printf("%s", ptr);
 }
 /**
  * print_all - print value in function of param given et %
