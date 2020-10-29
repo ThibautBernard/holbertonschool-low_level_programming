@@ -29,8 +29,8 @@ list_t *add_node(list_t **head, const char *str)
 				*head = next;
 			}
 			else
-				return (next);
+				return (NULL);
 		}
 	}
-	return (next);
+	return (NULL);
 }
