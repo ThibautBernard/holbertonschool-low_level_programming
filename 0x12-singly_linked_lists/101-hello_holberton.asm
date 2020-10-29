@@ -1,5 +1,5 @@
 section .data
-msg db "Hello Holberton", 10
+msg db "Hello, Holberton", 10
 msglen eq $ - msg
 
 section .text
