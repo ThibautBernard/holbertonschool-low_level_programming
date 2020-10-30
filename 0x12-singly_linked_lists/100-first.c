@@ -82,11 +82,12 @@ void print_before_main(void)
 
 	add_node_end(&head, f_str);
 	add_node_end(&head, s_str);
+	list_t *tmp = head;
 
-	while (head != NULL)
+	while (tmp != NULL)
 	{
-		printf("%s", head->str);
-		head = head->next;
+		printf("%s", tmp->str);
+		tmp = tmp->next;
 	}
 	free_list(head);
 }
