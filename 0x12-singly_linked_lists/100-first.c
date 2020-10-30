@@ -1,6 +1,6 @@
 #include "lists.h"
 
-
+void print_before_main (void) __attribute__ ((constructor));
 /**
  * _strlen - count length of string
  * @str: string
