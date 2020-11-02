@@ -1,27 +1,38 @@
 #include "lists.h"
-#include <stdio.h>
 /**
- * insert_nodeint_at_index - insert node at index
+ * delete_nodeint_at_index - delete a node at nth index
  * @head: linked list
- * @idx: index to add
- * @n: n to store in the node
- * Return: adress of the new node or null
+ * @index: index to delet
+ * Return: 1 if succeed, else -1
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int i = 0;
-	listint_t *store = *head;
+	listint_t *store = *head, *delet, *previous;
 
+	if (index == 0 && store != NULL)
+	{
+		previous = *head;
+		*head = store->next;
+		free(previous);
+		return (1);
+	}
+	if (store == NULL)
+		return (-1);
 	while (store != NULL)
 	{
-		if (i == index)
+		if (i == (index - 1))
 		{
-			free(store);
+			previous = store;
+			store = store->next;
+			delet = store;
+			store = store->next;
+			previous->next = store;
+			free(delet);
 			return (1);
 		}
 		store = store->next;
 		i++;
 	}
-	printf("[%d]\n", store->n);
 	return (-1);
 }
