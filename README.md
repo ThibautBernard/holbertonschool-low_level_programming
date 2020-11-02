@@ -13,5 +13,9 @@
 * [Argc - Argv](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0A-argc_argv)
 * [Malloc && Free](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0B-malloc_free)
 * [Create function Calloc | Realloc  && more ](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0C-more_malloc_free)
-
+* [Const, guard, define, pre-processing](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0D-preprocessor)
+* [Structs && typedef](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0E-structures_typedef)
+* [Pointer of functions](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0F-function_pointers)
+* [Variadic functions](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x10-variadic_functions)
+* [Singly linked lists](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x12-singly_linked_lists)
 
