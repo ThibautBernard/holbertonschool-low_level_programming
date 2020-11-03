@@ -31,7 +31,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *fast = head, *slow = head;
 	int i = 0, node_loop;
 
-	if (head == NULL)
+	if (head == NULL || head->next == NULL)
 		exit(98);
 	while (fast != NULL && fast->next != NULL)
 	{
