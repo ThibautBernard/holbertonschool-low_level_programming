@@ -31,8 +31,6 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *tmp, *start_loop, *fast = *h, *slow = *h;
 	int i = 0, seen = 0;
 
-	if (*h == NULL || (*h)->next == NULL)
-		exit(98);
 	while (fast != NULL && fast->next != NULL)
 	{
 		slow = slow->next;
