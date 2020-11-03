@@ -29,8 +29,8 @@ int free_no_loop(listint_t *slow)
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *tmp, *fast = *h, *slow = *h;
-	int i = 0, node_loop, meet_same_node = 0;
+	listint_t *tmp, *start_loop, *fast = *h, *slow = *h;
+	int i = 0, seen = 0;
 
 	if (*h == NULL || (*h)->next == NULL)
 		exit(98);
@@ -39,7 +39,26 @@ size_t free_listint_safe(listint_t **h)
 		slow = slow->next;
 		fast = fast->next->next;
 		if (slow == fast)
-			break;
+		{
+			slow = *h;
+			while (slow != fast)
+			{
+				slow = slow->next;
+				fast = fast->next;
+			}
+			start_loop = slow; /* store adress of start loop to compare*/
+			slow = *h;
+			while (!(seen == 2))
+			{
+				tmp = slow;
+				slow = slow->next;
+				if (slow == start_loop)
+					seen++;
+				free(tmp);
+			}
+			*h = NULL;
+			return (i);
+		}
 	}
 	if (slow != fast)
 	{
@@ -47,26 +66,5 @@ size_t free_listint_safe(listint_t **h)
 		*h = NULL;
 		return (free_no_loop(slow));
 	}
-	slow = *h;
-	while (slow != fast)
-	{
-		slow = slow->next;
-		fast = fast->next;
-	}
-	node_loop = slow->n;
-	i = 0;
-	slow = *h;
-	while (slow != NULL)
-	{
-		tmp = slow;
-		slow = slow->next;
-		free(tmp);
-		if (node_loop == slow->n && meet_same_node > 0)
-			break;
-		if (node_loop == slow->n)
-			meet_same_node++;
-		i++;
-	}
-	*h = NULL;
 	return (i);
 }
