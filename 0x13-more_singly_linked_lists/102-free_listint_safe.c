@@ -19,7 +19,6 @@ int free_no_loop(listint_t *slow)
 		free(tmp);
 		i++;
 	}
-	i++;
 	return (i);
 }
 /**
@@ -48,8 +47,10 @@ size_t free_listint_safe(listint_t **h)
 			}
 			start_loop = slow; /* store adress of start loop to compare*/
 			slow = *h;
+			i++;
 			while (!(seen == 2))
 			{
+				i++;
 				tmp = slow;
 				slow = slow->next;
 				if (slow == start_loop)
@@ -57,14 +58,11 @@ size_t free_listint_safe(listint_t **h)
 				free(tmp);
 			}
 			*h = NULL;
+			i -= 1;
 			return (i);
 		}
 	}
-	if (slow != fast)
-	{
-		slow = *h;
-		*h = NULL;
-		return (free_no_loop(slow));
-	}
-	return (i);
+	slow = *h;
+	*h = NULL;
+	return (free_no_loop(slow));
 }
