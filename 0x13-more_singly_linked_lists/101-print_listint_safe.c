@@ -32,7 +32,7 @@ size_t print_listint_safe(const listint_t *head)
 	int i = 0, meet_node = 0, node_loop;
 
 	if (head == NULL || head->next == NULL)
-		exit(98);
+		return (i);
 	while (fast != NULL && fast->next != NULL)
 	{
 		slow = slow->next;
