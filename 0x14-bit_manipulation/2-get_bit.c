@@ -25,7 +25,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int counter = 0, i = 0;
 
-	if ((index + 1) >= 64)
+	if (index > 63)
 		return (-1);
 	while (_pow_recursion(2, i) <= n)
 	{
