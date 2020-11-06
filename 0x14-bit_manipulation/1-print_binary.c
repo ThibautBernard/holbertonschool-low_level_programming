@@ -20,9 +20,10 @@ unsigned long int _pow_recursion(unsigned int x, unsigned int y)
  */
 void print_binary(unsigned long int n)
 {
-	int i = 0, counter = 0;
+	int i = 0;
+	int counter = 0;
 
-	while (_pow_recursion(2, i) <= n)
+	while (_pow_recursion(2, i) <= n && counter < 65)
 	{
 		counter++;
 		i++;
