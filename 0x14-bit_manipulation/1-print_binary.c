@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 	int i = 0;
 	int counter = 0;
 
-	while (_pow_recursion(2, i) <= n && counter <= 64)
+	while (_pow_recursion(2, i) <= n && counter < 64)
 	{
 		counter++;
 		i++;
