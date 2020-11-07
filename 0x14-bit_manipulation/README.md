@@ -1,3 +1,4 @@
 # bitwise operators
 * PRINT A BINARY NUMBER
 * SWITCH A ONE BINARY
+* 
