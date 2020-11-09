@@ -19,7 +19,11 @@ char *copy_file(int fd_from, int fd_to)
 	while ((read_from = read(fd_from, buffer, 1024)) > 0)
 	{
 		if (read_from > 0)
+		{
 			wrt_to = write(fd_to, buffer, read_from);
+			free(buffer);
+			buffer = malloc(sizeof(char) * 1024);
+		}
 	}
 	if (read_from == -1)
 		return (0);
