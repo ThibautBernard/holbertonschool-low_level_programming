@@ -16,18 +16,18 @@ int copy_file(int fd_from, int fd_to)
 	while ((read_from = read(fd_from, buffer, 1024)) > 0)
 	{
 		if (read_from == -1)
-			return (0);
+			return (98);
 		if (read_from > 0)
 		{
 			wrt_to = write(fd_to, buffer, read_from);
 			if (wrt_to == -1)
-				return (0);
+				return (99);
 		}
 	}
 	if (read_from == -1)
-		return (0);
+		return (98);
 	if (wrt_to == -1)
-		return (0);
+		return (99);
 	return (1);
 }
 /**
@@ -58,8 +58,16 @@ int main(int ac, char *av[])
 		exit(99);
 	}
 	r_file = copy_file(fd_file_from, fd_file_to);
-	if (r_file == 0)
+	if (r_file == 98)
+	{
+		dprintf(2, "Error: Can't read from file NAME_OF_THE_FILE\n");
+		exit(98);
+	}
+	if (r_file == 99)
+	{
+		dprintf(2, "Error: Can't write to NAME_OF_THE_FILE\n");
 		exit(99);
+	}
 	if (close(fd_file_from) == -1 || close(fd_file_to) == -1)
 	{
 		dprintf(2, "Error: Can't close fd FD_VALUE");
