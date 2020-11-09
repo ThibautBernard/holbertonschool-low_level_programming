@@ -16,10 +16,13 @@ char *copy_file(int fd_from, int fd_to)
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 		return (NULL);
-	read_from = read(fd_from, buffer, 1024);
+	while ((read_from = read(fd_from, buffer, 1024)) > 0)
+	{
+		if (read_from > 0)
+			wrt_to = write(fd_to, buffer, read_from);
+	}
 	if (read_from == -1)
 		return (0);
-	wrt_to = write(fd_to, buffer, read_from);
 	if (wrt_to == -1)
 		return (0);
 	free(buffer);
