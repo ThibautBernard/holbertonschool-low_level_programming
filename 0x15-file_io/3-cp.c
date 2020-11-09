@@ -46,7 +46,7 @@ int main(int ac, char *av[])
 		exit(97);
 	}
 	fd_file_from = open(av[1], O_RDONLY);
-	fd_file_to = open(av[2], O_WRONLY | O_CREAT, 0664);
+	fd_file_to = open(av[2], O_WRONLY | O_APPEND | O_CREAT, 0664);
 	if (fd_file_from == -1)
 	{
 		dprintf(2, "Error: Can't read from file NAME_OF_THE_FILE\n");
