@@ -30,6 +30,7 @@ int copy_file(int fd_from, int fd_to)
 		return (99);
 	return (1);
 }
+
 /**
  * main - entry, copy content file to another
  * @ac: number of arguments
@@ -49,28 +50,28 @@ int main(int ac, char *av[])
 	fd_file_to = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (fd_file_from == -1)
 	{
-		dprintf(2, "Error: Can't read from file NAME_OF_THE_FILE %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	if (fd_file_to == -1)
 	{
-		dprintf(2, "Error: Can't write to NAME_OF_THE_FILE %s\n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	r_file = copy_file(fd_file_from, fd_file_to);
 	if (r_file == 98)
 	{
-		dprintf(2, "Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	if (r_file == 99)
 	{
-		dprintf(2, "Error: Can't write to NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	if (close(fd_file_from) == -1 || close(fd_file_to) == -1)
 	{
-		dprintf(2, "Error: Can't close fd FD_VALUE");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_file_from);
 		exit(100);
 	}
 	return (0);
