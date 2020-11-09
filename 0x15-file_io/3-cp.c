@@ -8,29 +8,27 @@
  * @fd_to: file descriptor of file to
  * Return: 0 or NULL
  */
-char *copy_file(int fd_from, int fd_to)
+int copy_file(int fd_from, int fd_to)
 {
 	int read_from = 0, wrt_to = 0;
-	char *buffer;
+	char buffer[1024];
 
-	buffer = malloc(sizeof(char) * 1024);
-	if (buffer == NULL)
-		return (NULL);
 	while ((read_from = read(fd_from, buffer, 1024)) > 0)
 	{
+		if (read_from == -1)
+			return (0);
 		if (read_from > 0)
 		{
 			wrt_to = write(fd_to, buffer, read_from);
-			free(buffer);
-			buffer = malloc(sizeof(char) * 1024);
+			if (wrt_to == -1)
+				return (0);
 		}
 	}
 	if (read_from == -1)
 		return (0);
 	if (wrt_to == -1)
 		return (0);
-	free(buffer);
-	return (buffer);
+	return (1);
 }
 /**
  * main - entry, copy content file to another
@@ -40,7 +38,7 @@ char *copy_file(int fd_from, int fd_to)
  */
 int main(int ac, char *av[])
 {
-	int fd_file_from = 0, fd_file_to = 0;
+	int fd_file_from = 0, fd_file_to = 0, r_file = 0;
 
 	if (ac != 3)
 	{
@@ -59,7 +57,9 @@ int main(int ac, char *av[])
 		dprintf(2, "Error: Can't write to NAME_OF_THE_FILE\n");
 		exit(99);
 	}
-	copy_file(fd_file_from, fd_file_to);
+	r_file = copy_file(fd_file_from, fd_file_to);
+	if (r_file == 0)
+		return (0);
 	if (close(fd_file_from) == -1 || close(fd_file_to) == -1)
 	{
 		dprintf(2, "Error: Can't close fd FD_VALUE");
