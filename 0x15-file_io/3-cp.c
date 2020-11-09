@@ -59,7 +59,7 @@ int main(int ac, char *av[])
 	}
 	r_file = copy_file(fd_file_from, fd_file_to);
 	if (r_file == 0)
-		return (0);
+		exit(99);
 	if (close(fd_file_from) == -1 || close(fd_file_to) == -1)
 	{
 		dprintf(2, "Error: Can't close fd FD_VALUE");
