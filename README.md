@@ -1,5 +1,5 @@
 # LOW LEVEL PROGRAMMATION (C, Datastructure..)
-## Here below you can click on what project i done and see more about this project ! Don't hesitate to :)
+## Here below you can click on what project i did and see more about this project ! Don't hesitate to :)
 * [Compilation(4 steps) & Hello world(printf, putchar, write..)](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x00-hello_world)
 * [First algorithms with Loop, Conditions](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x01-variables_if_else_while)
 * [Algorithms, Header files, Functions, Nested loops](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x02-functions_nested_loops)
@@ -18,4 +18,8 @@
 * [Pointer of functions](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x0F-function_pointers)
 * [Variadic functions](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x10-variadic_functions)
 * [Singly linked lists](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x12-singly_linked_lists)
-
+* [More Singly linked lists](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x13-more_singly_linked_lists)
+* [Bit manipulation](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x14-bit_manipulation)
+* [File IO](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x15-file_io)
+* [Doubly linked list](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x17-doubly_linked_lists)
+* [Dynamic libraries](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x18-dynamic_libraries)
