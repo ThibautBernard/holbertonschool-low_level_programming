@@ -55,9 +55,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[key_index] == NULL)
 	{
 		hash_node_t *head = NULL;
+		hash_node_t *tmp = add_node(&head, key, value);
 
-		ht->array[key_index] = add_node(&head, key, value);
-		return (1);
+		if (tmp != NULL)
+		{
+			ht->array[key_index] = tmp;
+			return (1);
+		}
+		else
+			return (0);
 	}
 	ht->array[key_index] = add_node(&ht->array[key_index], key, value);
 	return (1);
