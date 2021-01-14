@@ -26,7 +26,7 @@ int _strn(const char *str)
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	if (key == NULL || _strn(key) == 0)
+	if (key == NULL || _strn(key) == 0 || ht == NULL)
 		return (NULL);
 	int key_index = hash_djb2((unsigned char *)key) % ht->size;
 
