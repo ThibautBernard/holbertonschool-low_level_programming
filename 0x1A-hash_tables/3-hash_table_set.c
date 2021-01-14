@@ -49,7 +49,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int key_index = 0;
 
-	if (key == NULL || _strlen(key) == 0)
+	if (ht == NULL || value == NULL || key == NULL || _strlen(key) == 0)
 		return (0);
 	key_index = hash_djb2((unsigned char *) key) % ht->size;
 	if (ht->array[key_index] == NULL)
