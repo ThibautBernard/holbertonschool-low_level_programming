@@ -10,9 +10,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	if (key == NULL || strlen(key) == 0 || ht == NULL)
 		return (NULL);
-	int key_index = hash_djb2((unsigned char *)key) % ht->size;
+	int key_idx = key_index((unsigned char *) key, ht->size);
 
-	hash_node_t *ptr = ht->array[key_index];
+	hash_node_t *ptr = ht->array[key_idx];
 
 	while (ptr)
 	{
