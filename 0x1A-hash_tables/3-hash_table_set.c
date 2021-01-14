@@ -52,18 +52,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || value == NULL || key == NULL || _strlen(key) == 0)
 		return (0);
 	key_index = hash_djb2((unsigned char *) key) % ht->size;
-	if (ht->array[key_index] == NULL)
+	if (ht->array[key_index] != NULL)
 	{
-		hash_node_t *head = NULL;
-		hash_node_t *tmp = add_node(&head, key, value);
-
-		if (tmp != NULL)
+		if (strcmp(key, ht->array[key_index]->key) == 0)
 		{
-			ht->array[key_index] = tmp;
+			free(ht->array[key_index]->value);
+			ht->array[key_index]->value = strdup(value);
 			return (1);
 		}
-		else
-			return (0);
 	}
 	ht->array[key_index] = add_node(&ht->array[key_index], key, value);
 	return (1);
