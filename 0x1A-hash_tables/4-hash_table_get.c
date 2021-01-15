@@ -8,11 +8,14 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
+	int key_idx = 0;
+	hash_node_t *ptr;
+
 	if (key == NULL || strlen(key) == 0 || ht == NULL)
 		return (NULL);
-	int key_idx = key_index((unsigned char *) key, ht->size);
+	key_idx = key_index((unsigned char *) key, ht->size);
 
-	hash_node_t *ptr = ht->array[key_idx];
+	ptr = ht->array[key_idx];
 
 	while (ptr)
 	{
