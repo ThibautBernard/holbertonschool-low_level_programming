@@ -23,6 +23,6 @@ def island_perimeter(grid):
                 counter_vert += 1
             if w == 1 and h[idx_w - 1] == 1 or w == 1 and counter_h == 0:
                 counter_h += 1
-    print("vertical : {}".format(counter_vert))
-    print("horizontal : {}".format(counter_h))
+    # print("vertical : {}".format(counter_vert))
+    # print("horizontal : {}".format(counter_h))
     return (2 * (counter_vert + counter_h))
