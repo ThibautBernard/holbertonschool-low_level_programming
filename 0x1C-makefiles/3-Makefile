@@ -9,13 +9,12 @@ all: $(OBJ)
 %.o: %.c
 	$(CC) -c -o $@ $<
 clean:
-	rm -f *~
-	rm -f *.swp
+	rm -f *~ holberton
 oclean:
 	rm -f $(RM)
-	rm -f $(NAME)
-	rm -f *\~
-	rm -f *.swp
+fclean:
+	rm -f *~ holberton
+	rm -f $(RM)
 re:
 	rm -f $(RM)
 	all
