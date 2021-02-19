@@ -18,7 +18,8 @@ def island_perimeter(grid):
     for idx_h, h in enumerate(grid):
         for idx_w, w in enumerate(h):
             if w == 1 and grid[idx_h + 1][idx_w] == 1 or w == 1 \
-             and grid[idx_h + 1][idx_w] == 0 and grid[idx_h - 1][idx_w] == 1:
+             and grid[idx_h + 1][idx_w] == 0 and\
+             grid[idx_h - 1][idx_w] == 1 or w == 1 and counter_vert == 0:
                 counter_vert += 1
             if w == 1 and h[idx_w + 1] == 1 or w == 1 and h[idx_w - 1] == 1:
                 counter_h += 1
