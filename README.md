@@ -22,4 +22,6 @@
 * [Bit manipulation](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x14-bit_manipulation)
 * [File IO](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x15-file_io)
 * [Doubly linked list](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x17-doubly_linked_lists)
-* [Dynamic libraries](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x18-dynamic_libraries)
+* [Dynamic libraries](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x1A-hash_tables)
+* [Hash Tables](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x18-dynamic_libraries)
+* [Makefiles](https://github.com/ThibautBernard/holbertonschool-low_level_programming/tree/master/0x1C-makefiles)
